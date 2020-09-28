@@ -7,7 +7,8 @@
 
 // Modules
 const pathJoin = require('path').join,
-	{stat: statFile, readFile} = require('fs/promises'),
+	// eslint-disable-next-line node/no-unsupported-features/node-builtins
+	{stat: statFile, readFile} = require('fs').promises,
 	Plugin = require('@overlook/plugin'),
 	Route = require('@overlook/route'),
 	staticPlugin = require('@overlook/plugin-static'),
