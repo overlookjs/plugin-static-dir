@@ -11,17 +11,13 @@
 // Exports
 
 module.exports = function itExports(staticDirPlugin) {
-	describe.skip('methods', () => { // eslint-disable-line jest/no-disabled-tests
-		it.each([
-			'TEMP'
-		])('%s', (key) => {
-			expect(staticDirPlugin[key]).toBeFunction();
-		});
-	});
-
 	describe('symbols', () => {
 		it.each([
-			'TEMP'
+			'STATIC_FILES',
+			'STATIC_DIR_PATH',
+			'GET_STATIC_DIR_PATH',
+			'STATIC_BUILD_PATH',
+			'GET_STATIC_BUILD_PATH'
 		])('%s', (key) => {
 			expect(typeof staticDirPlugin[key]).toBe('symbol');
 		});

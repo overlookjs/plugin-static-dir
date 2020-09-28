@@ -10,5 +10,9 @@ import staticDirPlugin from '../lib/index.js';
 
 export default staticDirPlugin;
 export const {
-	TEMP
+	STATIC_FILES,
+	STATIC_DIR_PATH,
+	GET_STATIC_DIR_PATH,
+	STATIC_BUILD_PATH,
+	GET_STATIC_BUILD_PATH
 } = staticDirPlugin;

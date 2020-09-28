@@ -10,7 +10,43 @@ Part of the [Overlook framework](https://overlookjs.github.io/).
 
 ## Usage
 
-This module is under development and not ready for use yet.
+Serve a directory of static files.
+
+Use this plugin on a route and specify path to serve from with `[STATIC_DIR_PATH]` or `[GET_STATIC_DIR_PATH]()`.
+
+```js
+const Route = require('@overlook/route'),
+  staticDirPlugin = require('@overlook/plugin-static-dir'),
+  { STATIC_DIR_PATH } = staticDirPlugin;
+
+const StaticDirRoute = Route.extend(staticDirPlugin);
+
+const route = new StaticDirRoute( {
+  [STATIC_DIR_PATH]: '/path/to/dir'
+} );
+```
+
+### Options
+
+#### Providing path to dir to serve
+
+`[GET_STATIC_DIR_PATH]()` can alternatively be used to specify path to dir to serve files from.
+
+```js
+const { GET_STATIC_DIR_PATH } = require('@overlook/plugin-static-dir');
+
+const route = new StaticDirRoute( {
+  [GET_STATIC_DIR_PATH]() {
+    return '/path/to/dir';
+  }
+} );
+```
+
+#### Build path
+
+If you are building the app, you can customize the directory in build dir which static files get placed with `[STATIC_BUILD_PATH]` or `[GET_STATIC_BUILD_PATH]()`.
+
+The default is `'static'`.
 
 ## Versioning
 
